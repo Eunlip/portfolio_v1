@@ -76,7 +76,23 @@ export default function Projects() {
 				</Tabs>
 			</div>
 
-			<div className='mt-10 grid grid-cols-2 gap-7'>
+			{paginatedProjects.length > 0 && (
+				<div className='my-5 flex justify-end'>
+					<Pagination
+						showControls
+						total={totalPages}
+						page={page}
+						onChange={setPage}
+						classNames={{
+							item: 'w-8 h-8 text-small rounded-md bg-transparent',
+							cursor:
+								'bg-gradient-to-l shadow-lg from-green-700 to-emerald-700 text-white font-bold',
+						}}
+					/>
+				</div>
+			)}
+
+			<div className='grid grid-cols-2 gap-7'>
 				{paginatedProjects.length === 0 ? (
 					<Card
 						shadow='sm'
@@ -95,22 +111,6 @@ export default function Projects() {
 					paginatedProjects.map((project) => <CardProject key={project.title} {...project} />)
 				)}
 			</div>
-
-			{paginatedProjects.length > 0 && (
-				<div className='mt-10 flex justify-center'>
-					<Pagination
-						showControls
-						total={totalPages}
-						page={page}
-						onChange={setPage}
-						classNames={{
-							item: 'w-8 h-8 text-small rounded-none bg-transparent',
-							cursor:
-								'bg-gradient-to-l shadow-lg from-green-700 to-emerald-700 text-white font-bold',
-						}}
-					/>
-				</div>
-			)}
 		</div>
 	);
 }
