@@ -6,7 +6,7 @@ export default function ButtonCTA() {
 	return (
 		<Button
 			endContent={<FileDown className='w-5 h-5' />}
-			className='border border-emerald-100 bg-transparent text-emerald-100 rounded-lg font-bold px-6 py-6 text-base hover:bg-emerald-100 hover:text-black hover:bg-opacity-100 transition-all duration-1000 ease-in-out'
+			className='border border-emerald-100 bg-transparent text-emerald-100 rounded-lg font-bold px-6 py-6 text-base hover:bg-gradient-to-tl from-emerald-400 via-emerald-600 to-emerald-200 hover:text-white hover:bg-opacity-100'
 		>
 			Here&apos;s my CV
 		</Button>
