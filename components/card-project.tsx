@@ -26,7 +26,7 @@ export default function CardProject({
 	return (
 		<Card
 			shadow='sm'
-			className='rounded-lg group bg-gradient-to-tr from-[#161616] to-[#101010] border border-[#2E2E2E] w-full  shadow-large shadow-black'
+			className='rounded-lg group bg-gradient-to-tr from-[#161616] to-[#000000]/90 border border-[#2E2E2E] w-full shadow-large shadow-black'
 		>
 			<CardBody className='overflow-visible space-y-3 p-0'>
 				<Image
@@ -36,6 +36,7 @@ export default function CardProject({
 					width={300}
 					height={300}
 					loading='eager'
+					draggable={false}
 				/>
 				<div className='space-y-1 px-3 flex items-center justify-between'>
 					<div>
@@ -56,19 +57,19 @@ export default function CardProject({
 			</CardBody>
 			<CardFooter className='my-2 flex items-center justify-between'>
 				{techstack}
-				<div className='flex items-center justify-center gap-3'>
+				<div className='flex items-center justify-center gap-1'>
 					{github && (
 						<Link href={github} target='_blank' className='hover:opacity-85'>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
 								x='0px'
 								y='0px'
-								width='20'
-								height='20'
+								width='30'
+								height='30'
 								viewBox='0,0,256,256'
 							>
 								<g
-									fill='#fffafa'
+									fill='#ffffff'
 									fillRule='nonzero'
 									stroke='none'
 									strokeWidth='1'
@@ -83,29 +84,8 @@ export default function CardProject({
 									textAnchor='none'
 									style={{ mixBlendMode: 'normal' }}
 								>
-									<path
-										d='M128,256c-70.69245,0 -128,-57.30755 -128,-128v0c0,-70.69245 57.30755,-128 128,-128v0c70.69245,0 128,57.30755 128,128v0c0,70.69245 -57.30755,128 -128,128z'
-										id='shape'
-									></path>
-								</g>
-								<g
-									fill='#000000'
-									fillRule='nonzero'
-									stroke='none'
-									strokeWidth='1'
-									strokeLinecap='butt'
-									strokeLinejoin='miter'
-									strokeMiterlimit='10'
-									strokeDasharray=''
-									strokeDashoffset='0'
-									fontFamily='none'
-									fontWeight='none'
-									fontSize='none'
-									textAnchor='none'
-									style={{ mixBlendMode: 'normal' }}
-								>
-									<g transform='scale(16,16)'>
-										<path d='M8,0c-4.4,0 -8,3.6 -8,8c0,3.526 2.315,6.534 5.498,7.591c0.377,0.055 0.52,-0.179 0.52,-0.385c0,-0.19 -0.007,-0.693 -0.011,-1.361c-2.225,0.483 -2.695,-1.072 -2.695,-1.072c-0.364,-0.924 -0.888,-1.17 -0.888,-1.17c-0.726,-0.496 0.055,-0.486 0.055,-0.486c0.803,0.057 1.225,0.824 1.225,0.824c0.714,1.223 1.872,0.87 2.328,0.665c0.073,-0.517 0.279,-0.87 0.508,-1.069c-1.776,-0.202 -3.644,-0.888 -3.644,-3.954c0,-0.873 0.312,-1.587 0.823,-2.147c-0.082,-0.203 -0.357,-1.017 0.079,-2.118c0,0 0.672,-0.215 2.2,0.82c0.638,-0.177 1.322,-0.266 2.002,-0.269c0.679,0.003 1.364,0.092 2.003,0.269c1.527,-1.035 2.198,-0.82 2.198,-0.82c0.436,1.101 0.162,1.915 0.08,2.117c0.513,0.559 0.822,1.273 0.822,2.147c0,3.073 -1.87,3.75 -3.653,3.948c0.287,0.247 0.543,0.735 0.543,1.482c0,1.07 -0.01,1.932 -0.01,2.195c0,0.208 0.141,0.443 0.521,0.385c3.182,-1.06 5.496,-4.066 5.496,-7.592c0,-4.4 -3.6,-8 -8,-8z'></path>
+									<g transform='scale(4,4)'>
+										<path d='M32,10c-12.15,0 -22,9.85 -22,22c0,12.15 9.85,22 22,22c12.15,0 22,-9.85 22,-22c0,-12.15 -9.85,-22 -22,-22zM32,14c9.941,0 18,8.059 18,18c0,8.23871 -5.54128,15.16934 -13.0957,17.30664c-0.0928,-0.19124 -0.15645,-0.40072 -0.15039,-0.63867c0.031,-1.209 0,-4.03041 0,-5.06641c0,-1.778 -1.125,-3.03906 -1.125,-3.03906c0,0 8.82422,0.09959 8.82422,-9.31641c0,-3.633 -1.89844,-5.52539 -1.89844,-5.52539c0,0 0.9973,-3.87844 -0.3457,-5.52344c-1.505,-0.163 -4.20056,1.43755 -5.35156,2.18555c0,0 -1.82342,-0.74805 -4.85742,-0.74805c-3.034,0 -4.85742,0.74805 -4.85742,0.74805c-1.151,-0.748 -3.84656,-2.34755 -5.35156,-2.18555c-1.342,1.645 -0.3457,5.52344 -0.3457,5.52344c0,0 -1.89844,1.89044 -1.89844,5.52344c0,9.416 8.82422,9.31836 8.82422,9.31836c0,0 -1.00476,1.14381 -1.10547,2.7832c-0.58969,0.20793 -1.39349,0.45313 -2.16016,0.45313c-1.85,0 -3.25548,-1.79691 -3.77148,-2.62891c-0.508,-0.821 -1.54948,-1.50977 -2.52148,-1.50977c-0.64,0 -0.95312,0.3215 -0.95312,0.6875c0,0.366 0.89823,0.62083 1.49023,1.29883c1.248,1.43 1.22488,4.64648 5.67188,4.64648c0.5258,0 1.47056,-0.1211 2.22461,-0.22461c-0.00417,1.00955 -0.0159,1.97778 0,2.59766c0.00586,0.23869 -0.05897,0.44894 -0.15234,0.64063c-7.55349,-2.1379 -13.09375,-9.0686 -13.09375,-17.30664c0,-9.941 8.059,-18 18,-18z'></path>
 									</g>
 								</g>
 							</svg>

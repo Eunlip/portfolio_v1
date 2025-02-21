@@ -42,7 +42,7 @@ export default function Projects() {
 
 	return (
 		<div>
-			<h1 className='text-2xl font-semibold'>Projects</h1>
+			<h1 className='text-2xl font-semibold text-center sm:text-start'>Projects</h1>
 			<div className='flex w-full flex-col my-5'>
 				<Tabs
 					aria-label='Options'
@@ -77,7 +77,7 @@ export default function Projects() {
 			</div>
 
 			{paginatedProjects.length > 0 && (
-				<div className='my-5 flex justify-end'>
+				<div className='my-5 flex justify-center'>
 					<Pagination
 						showControls
 						total={totalPages}
@@ -92,7 +92,7 @@ export default function Projects() {
 				</div>
 			)}
 
-			<div className='grid grid-cols-2 gap-7'>
+			<div className='grid grid-cols-1 sm:grid-cols-2 gap-7'>
 				{paginatedProjects.length === 0 ? (
 					<Card
 						shadow='sm'
