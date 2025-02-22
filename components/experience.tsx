@@ -70,7 +70,7 @@ export default function Experience() {
 										width='25'
 										height='25'
 										className='rounded-full'
-										loading='eager'
+										loading='lazy'
 										draggable={false}
 									/>
 									<h2 className='font-bold text-xl sm:text-lg text-foreground-700'>

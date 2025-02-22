@@ -542,7 +542,7 @@ export const projects = [
 					alt='laravel icon'
 					width={20}
 					height={20}
-					loading='eager'
+					loading='lazy'
 					draggable={false}
 				/>
 			</div>,
@@ -633,7 +633,7 @@ export const projects = [
 					alt='laravel icon'
 					width={20}
 					height={20}
-					loading='eager'
+					loading='lazy'
 					draggable={false}
 				/>
 				<svg

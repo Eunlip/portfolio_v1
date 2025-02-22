@@ -64,7 +64,7 @@ export default function CardProject({
 							src={img}
 							width={300}
 							height={300}
-							loading='eager'
+							loading='lazy'
 							draggable={false}
 						/>
 						<div className='space-y-1 px-3 flex items-center justify-between'>
