@@ -68,7 +68,6 @@ export default {
 			},
 			fontFamily: {
 				body: ['Lato', 'sans-serif'],
-				mochiy: 'var(--font-mochiy)',
 			},
 		},
 	},

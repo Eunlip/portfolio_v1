@@ -36,7 +36,7 @@ export default function Stats() {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ duration: 1, delay: 3.5 }}
-							className='font-mochiy text-5xl sm:text-4xl'
+							className='text-5xl sm:text-4xl'
 						>
 							{stat.value}
 						</motion.div>
