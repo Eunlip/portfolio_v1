@@ -4,6 +4,8 @@ import { projects } from '@/constant';
 import { Card, Chip, Pagination, Tab, Tabs } from '@heroui/react';
 import { useState } from 'react';
 import CardProject, { ProjectProps } from './card-project';
+import { InView } from './ui/in-view';
+import { motion } from 'motion/react';
 
 function tab(projects: ProjectProps[]): { key: string; title: string; count: number }[] {
 	const categories = ['All', 'Website', 'Design', 'Mobile'];
@@ -41,9 +43,41 @@ export default function Projects() {
 	};
 
 	return (
-		<div>
+		<InView
+			viewOptions={{ once: true, margin: '0px 0px -200px 0px' }}
+			variants={{
+				hidden: {
+					opacity: 0,
+					y: 50,
+					filter: 'blur(4px)',
+				},
+				visible: {
+					opacity: 1,
+					y: 0,
+					filter: 'blur(0px)',
+					transition: {
+						staggerChildren: 0.5,
+						duration: 0.5,
+					},
+				},
+			}}
+		>
 			<h1 className='text-2xl font-semibold text-center sm:text-start'>Projects</h1>
-			<div className='flex w-full flex-col my-5'>
+			<motion.div
+				variants={{
+					hidden: { opacity: 0, y: 30, filter: 'blur(4px)' },
+					visible: {
+						opacity: 1,
+						y: 0,
+						filter: 'blur(0px)',
+						transition: {
+							duration: 0.5,
+							delay: 0.5,
+						},
+					},
+				}}
+				className='flex w-full flex-col my-5'
+			>
 				<Tabs
 					aria-label='Options'
 					selectedKey={selected}
@@ -71,13 +105,27 @@ export default function Projects() {
 									</Chip>
 								</div>
 							}
-						></Tab>
+						/>
 					))}
 				</Tabs>
-			</div>
+			</motion.div>
 
 			{paginatedProjects.length > 0 && (
-				<div className='my-5 flex justify-center'>
+				<motion.div
+					variants={{
+						hidden: { opacity: 0, y: -10 },
+						visible: {
+							opacity: 1,
+							y: 0,
+
+							transition: {
+								duration: 0.5,
+								delay: 0.8,
+							},
+						},
+					}}
+					className='my-5 flex justify-center'
+				>
 					<Pagination
 						showControls
 						total={totalPages}
@@ -89,10 +137,24 @@ export default function Projects() {
 								'bg-gradient-to-l shadow-lg from-green-700 to-emerald-700 text-white font-bold',
 						}}
 					/>
-				</div>
+				</motion.div>
 			)}
 
-			<div className='grid grid-cols-1 sm:grid-cols-2 gap-7'>
+			<motion.div
+				variants={{
+					hidden: { opacity: 0, filter: 'blur(4px)' },
+					visible: {
+						opacity: 1,
+						filter: 'blur(0px)',
+						transition: {
+							duration: 0.5,
+							staggerChildren: 0.3,
+							delay: 0.3,
+						},
+					},
+				}}
+				className='grid grid-cols-1 sm:grid-cols-2 gap-7'
+			>
 				{paginatedProjects.length === 0 ? (
 					<Card
 						shadow='sm'
@@ -110,7 +172,7 @@ export default function Projects() {
 				) : (
 					paginatedProjects.map((project) => <CardProject key={project.title} {...project} />)
 				)}
-			</div>
-		</div>
+			</motion.div>
+		</InView>
 	);
 }

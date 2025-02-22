@@ -1,37 +1,65 @@
-import ButtonCTA from '@/components/cta';
+import AboutMe from '@/components/about-me';
+import ContactMe from '@/components/contact-me';
 import Experience from '@/components/experience';
+import Footer from '@/components/footer';
 import Projects from '@/components/projects';
 import Stats from '@/components/stats';
 import Techstack from '@/components/techstacks';
+import { TextEffect } from '@/components/ui/text-effect';
 
 export default function Home() {
 	return (
-		<main className='mt-20 space-y-24 container mx-auto px-0 md:px-32 xl:px-64 2xl:px-96 '>
-			<section className=''>
-				<h1 className='text-4xl font-bold leading-relaxed'>
-					Hi Everyone👋, <br />
-					I&apos;m{' '}
-					<span className='text-emerald-200 font-normal font-mochiy'>Muhamad Alif Pahreza</span>
-				</h1>
+		<main className='container space-y-24 sm:space-y-44 mx-auto px-5 md:px-10 xl:px-56 2xl:px-80 '>
+			<section id='home' className='pt-24 sm:pt-32 '>
+				<div className='flex flex-col gap-5'>
+					<TextEffect
+						className='text-5xl font-bold text-center sm:text-start'
+						as='h1'
+						preset='blur'
+						per='char'
+						delay={0.5}
+					>
+						Hi Everyone,
+					</TextEffect>
 
-				{/* About Me */}
-				<div className='mt-5 mb-10 space-y-7'>
-					<p className='text-lg leading-normal text-secondary text-justify'>
-						I&apos;m a 6th semester informatics engineering student focusing on{' '}
-						<span className='text-emerald-300 font-bold'>Front End developer</span> with a passion
-						for creating innovative, creative, and effective solutions. My expertise is JavaScript
-						and TypeScript. I have experience building website with various technologies such as
-						Reactjs, Nextjs, TailwindCSS, and more.
-					</p>
-					{/* <p className='text-lg leading-normal text-secondary'></p> */}
-					<ButtonCTA />
+					<div className='relative flex flex-col sm:flex-row items-center gap-3'>
+						<TextEffect
+							className='relative text-5xl font-bold text-center sm:text-start'
+							as='h1'
+							preset='blur'
+							per='char'
+							delay={1}
+						>
+							I&apos;m
+						</TextEffect>
+						<TextEffect
+							className='relative text-5xl font-bold text-emerald-100 text-center sm:text-start w-72 sm:w-full leading-snug sm:leading-normal'
+							as='h1'
+							preset='blur'
+							per='char'
+							delay={1.2}
+						>
+							Muhamad Alif Pahreza
+						</TextEffect>
+					</div>
 				</div>
+				<AboutMe />
 				<Stats />
 			</section>
 
-			<Techstack />
-			<Projects />
-			<Experience />
+			<section id='techstack'>
+				<Techstack />
+			</section>
+			<section id='experience'>
+				<Experience />
+			</section>
+			<section id='projects'>
+				<Projects />
+			</section>
+			<section id='contactme' className=' py-4'>
+				<ContactMe />
+			</section>
+			<Footer />
 		</main>
 	);
 }

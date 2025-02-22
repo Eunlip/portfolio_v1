@@ -2,11 +2,37 @@
 
 import { sendEmail } from '@/actions/email';
 import { Button, Form, Input, Textarea } from '@heroui/react';
-import { useActionState } from 'react';
-import ToastStateForm from './toastStateForm';
+import { useActionState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 export default function FormContactMe() {
 	const [state, formAction, isPending] = useActionState(sendEmail, null);
+
+	useEffect(() => {
+		if (state?.success) {
+			toast.success(state.message, {
+				position: 'bottom-right',
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: false,
+				pauseOnHover: false,
+				draggable: true,
+				progress: undefined,
+				theme: 'dark',
+			});
+		} else if (state?.success === false || state?.error) {
+			toast.error(state?.message ?? state?.error, {
+				position: 'bottom-right',
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: false,
+				pauseOnHover: false,
+				draggable: true,
+				progress: undefined,
+				theme: 'dark',
+			});
+		}
+	}, [state]);
 
 	return (
 		<Form action={formAction} className='space-y-2' validationBehavior='native'>
@@ -68,10 +94,7 @@ export default function FormContactMe() {
 			>
 				{isPending ? 'Sending...' : 'Send Message'}
 			</Button>
-			{state?.error && (
-				<ToastStateForm message={state.message ?? "Can't send email, please try again"} />
-			)}
-			{state?.success && <ToastStateForm message={state.message ?? 'Email sent successfully'} />}
+			{state?.error && <p className='text-red-500 text-sm'>{state.message}</p>}
 		</Form>
 	);
 }

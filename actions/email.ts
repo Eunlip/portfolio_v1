@@ -33,7 +33,7 @@ export async function sendEmail(state: unknown, formData: FormData) {
 
 		if (error) {
 			console.error('Resend error:', error);
-			return { error: 'Failed to send email' };
+			return { success: false, error: 'Failed to send email, please try again' };
 		}
 
 		return {
@@ -42,9 +42,5 @@ export async function sendEmail(state: unknown, formData: FormData) {
 		};
 	} catch (error) {
 		console.error('Failed to send email:', error);
-		return {
-			success: false,
-			message: "Can't send email, please try again",
-		};
 	}
 }

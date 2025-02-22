@@ -3,6 +3,8 @@ import { Lato } from 'next/font/google';
 import './globals.css';
 import { HeroUIProvider } from '@heroui/react';
 import Navbar from '@/components/navbar';
+import { Suspense } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 const lato = Lato({
 	subsets: ['latin'],
@@ -21,11 +23,14 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={`${lato.className}  pt-6 pb-20 antialiased`}>
-				<HeroUIProvider className='dark'>
-					<Navbar />
-					{children}
-				</HeroUIProvider>
+			<body className={`${lato.className} antialiased`}>
+				<Suspense fallback='Loading...'>
+					<ToastContainer />
+					<HeroUIProvider className='dark'>
+						<Navbar />
+						{children}
+					</HeroUIProvider>
+				</Suspense>
 			</body>
 		</html>
 	);

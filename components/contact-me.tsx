@@ -1,8 +1,27 @@
 import FormContactMe from './form-contact-me';
+import { InView } from './ui/in-view';
 
 export default function ContactMe() {
 	return (
-		<div className='space-y-10 py-10'>
+		<InView
+			viewOptions={{ once: true, margin: '0px 0px -200px 0px' }}
+			variants={{
+				hidden: {
+					opacity: 0,
+					translateY: 50,
+					filter: 'blur(5px)',
+				},
+				visible: {
+					opacity: 1,
+					translateY: 0,
+					filter: 'blur(0px)',
+					transition: {
+						duration: 0.5,
+						delay: 0.3,
+					},
+				},
+			}}
+		>
 			<div className='flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-10'>
 				<div className='flex-col space-y-5'>
 					<h1 className='text-2xl font-semibold text-center sm:text-start'>Contact Me</h1>
@@ -20,6 +39,6 @@ export default function ContactMe() {
 					<FormContactMe />
 				</div>
 			</div>
-		</div>
+		</InView>
 	);
 }

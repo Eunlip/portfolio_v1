@@ -1,79 +1,44 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
-interface ContactInfo {
-	title?: string;
-	description: string | React.ReactElement[];
-}
+export const navbarMenu = [
+	{
+		title: 'Home',
+		link: 'home',
+	},
+	{
+		title: 'Tech Stack',
+		link: 'techstack',
+	},
+	{
+		title: 'Experience',
+		link: 'experience',
+	},
+	{
+		title: 'Projects',
+		link: 'projects',
+	},
+	{
+		title: 'Contact Me',
+		link: 'contactme',
+	},
+];
 
 export const stats = [
 	{
 		title: 'Years of Experience',
-		value: '-1',
+		value: -1,
 	},
 	{
 		title: 'Projects Completed',
-		value: '3',
+		value: 3,
 	},
 	{
 		title: 'Happy Clients',
-		value: '1',
+		value: 2,
 	},
 ];
 
 export const techstacks = [
-	{
-		logo: (
-			<svg
-				xmlns='http://www.w3.org/2000/svg'
-				x='0px'
-				y='0px'
-				width='31'
-				height='31'
-				viewBox='0 0 48 48'
-			>
-				<path fill='#E65100' d='M41,5H7l3,34l14,4l14-4L41,5L41,5z'></path>
-				<path fill='#FF6D00' d='M24 8L24 39.9 35.2 36.7 37.7 8z'></path>
-				<path
-					fill='#FFF'
-					d='M24,25v-4h8.6l-0.7,11.5L24,35.1v-4.2l4.1-1.4l0.3-4.5H24z M32.9,17l0.3-4H24v4H32.9z'
-				></path>
-				<path
-					fill='#EEE'
-					d='M24,30.9v4.2l-7.9-2.6L15.7,27h4l0.2,2.5L24,30.9z M19.1,17H24v-4h-9.1l0.7,12H24v-4h-4.6L19.1,17z'
-				></path>
-			</svg>
-		),
-		title: 'HTML',
-		description: 'Markup Language',
-		link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
-	},
-	{
-		logo: (
-			<svg
-				xmlns='http://www.w3.org/2000/svg'
-				x='0px'
-				y='0px'
-				width='31'
-				height='31'
-				viewBox='0 0 48 48'
-			>
-				<path fill='#0277BD' d='M41,5H7l3,34l14,4l14-4L41,5L41,5z'></path>
-				<path fill='#039BE5' d='M24 8L24 39.9 35.2 36.7 37.7 8z'></path>
-				<path
-					fill='#FFF'
-					d='M33.1 13L24 13 24 17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z'
-				></path>
-				<path
-					fill='#EEE'
-					d='M24,13v4h-8.9l-0.3-4H24z M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4L19.8,27z'
-				></path>
-			</svg>
-		),
-		title: 'CSS',
-		description: 'Cascading Style Sheet',
-		link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
-	},
 	{
 		logo: (
 			<svg
@@ -92,7 +57,7 @@ export const techstacks = [
 			</svg>
 		),
 		title: 'JavaScript',
-		description: 'Programming Language',
+		description: 'Language',
 		link: 'https://javascript.info/',
 	},
 	{
@@ -117,7 +82,7 @@ export const techstacks = [
 			</svg>
 		),
 		title: 'TypeScript',
-		description: 'Type-safe for javascript',
+		description: 'Language',
 		link: 'https://www.typescriptlang.org/',
 	},
 	{
@@ -137,7 +102,7 @@ export const techstacks = [
 			</svg>
 		),
 		title: 'TailwindCSS',
-		description: 'Framework for css',
+		description: 'CSS Framework',
 		link: 'https://tailwindcss.com/',
 	},
 	{
@@ -166,7 +131,7 @@ export const techstacks = [
 			</svg>
 		),
 		title: 'React.js',
-		description: 'Library for javascript',
+		description: 'Javascript Library',
 		link: 'https://reactjs.org/',
 	},
 	{
@@ -252,7 +217,7 @@ export const techstacks = [
 			</svg>
 		),
 		title: 'Next.js',
-		description: 'Framework for react',
+		description: 'React Web Framework',
 		link: 'https://nextjs.org/',
 	},
 	{
@@ -328,7 +293,7 @@ export const techstacks = [
 			</svg>
 		),
 		title: 'PostgreSQL',
-		description: 'SQL',
+		description: 'Database SQL',
 		link: 'http://www.postgresql.org',
 	},
 	{
@@ -572,7 +537,14 @@ export const projects = [
 						d='M24,9.604c-6.4,0-10.4,3.199-12,9.597c2.4-3.199,5.2-4.398,8.4-3.599 c1.826,0.456,3.131,1.781,4.576,3.247C27.328,21.236,30.051,24,36,24c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.6 c-1.825-0.456-3.13-1.781-4.575-3.247C32.672,12.367,29.948,9.604,24,9.604L24,9.604z M12,24c-6.4,0-10.4,3.199-12,9.598 c2.4-3.199,5.2-4.399,8.4-3.599c1.825,0.457,3.13,1.781,4.575,3.246c2.353,2.388,5.077,5.152,11.025,5.152 c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.599c-1.826-0.456-3.131-1.781-4.576-3.246C20.672,26.764,17.949,24,12,24 L12,24z'
 					></path>
 				</svg>
-				<Image src='/laravel.svg' alt='laravel icon' width={20} height={20} />
+				<Image
+					src='/laravel.svg'
+					alt='laravel icon'
+					width={20}
+					height={20}
+					loading='eager'
+					draggable={false}
+				/>
 			</div>,
 		],
 		category: ['Website', 'Design'],
@@ -656,7 +628,14 @@ export const projects = [
 						d='M8,37l26.666-25.713c0.559-0.539,1.492-0.221,1.606,0.547L40,37l-15,8.743 c-0.609,0.342-1.352,0.342-1.961,0L8,37z'
 					></path>
 				</svg>
-				<Image src='/laravel.svg' alt='laravel icon' width={20} height={20} />
+				<Image
+					src='/laravel.svg'
+					alt='laravel icon'
+					width={20}
+					height={20}
+					loading='eager'
+					draggable={false}
+				/>
 				<svg
 					key='icon-desa-bayur'
 					xmlns='http://www.w3.org/2000/svg'
@@ -816,6 +795,7 @@ export const projects = [
 
 export const experience = [
 	{
+		logo: '/dicoding.jpeg',
 		company: 'PT. Presentologics (Independent Study)',
 		role: 'React & Back-end Developer',
 		date: '4 Month (Feb - Jun 2024)',
@@ -823,133 +803,11 @@ export const experience = [
 			'At the end of the program, there is a capstone project that must be completed, where i designed and built a website to share portfolios and learning processes in collaboration with Backend',
 	},
 	{
+		logo: '/UNTR.JK.svg',
 		company: 'PT. United Tractors Tbk. Site Tanjung (Internship)',
 		role: 'Front-end Developer',
 		date: '4 Month (Sep 2024 - Jan 2025)',
 		description:
 			'Designed and developed an IT Ticket and Complaint website to make it easier for employees to submit technical related issues',
-	},
-];
-
-export const leftSideContact: ContactInfo[] = [
-	{
-		title: "Don't be Shy",
-		description:
-			"I'm always open to collaborating together to discuss new projects. So, feel free to contact me",
-	},
-	{
-		title: 'Email',
-		description: 'adef6477@gmail.com',
-	},
-	{
-		description: [
-			<div key='icon social media' className='flex items-center gap-1'>
-				<Link href='https://www.instagram.com/eunlipp_?igsh=djIxMnAzbHdxcHdk'>
-					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						x='0px'
-						y='0px'
-						width='31'
-						height='31'
-						viewBox='0 0 48 48'
-					>
-						<radialGradient
-							id='yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1'
-							cx='19.38'
-							cy='42.035'
-							r='44.899'
-							gradientUnits='userSpaceOnUse'
-						>
-							<stop offset='0' stopColor='#fd5'></stop>
-							<stop offset='.328' stopColor='#ff543f'></stop>
-							<stop offset='.348' stopColor='#fc5245'></stop>
-							<stop offset='.504' stopColor='#e64771'></stop>
-							<stop offset='.643' stopColor='#d53e91'></stop>
-							<stop offset='.761' stopColor='#cc39a4'></stop>
-							<stop offset='.841' stopColor='#c837ab'></stop>
-						</radialGradient>
-						<path
-							fill='url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)'
-							d='M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z'
-						></path>
-						<radialGradient
-							id='yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2'
-							cx='11.786'
-							cy='5.54'
-							r='29.813'
-							gradientTransform='matrix(1 0 0 .6663 0 1.849)'
-							gradientUnits='userSpaceOnUse'
-						>
-							<stop offset='0' stopColor='#4168c9'></stop>
-							<stop offset='.999' stopColor='#4168c9' stopOpacity='0'></stop>
-						</radialGradient>
-						<path
-							fill='url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)'
-							d='M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z'
-						></path>
-						<path
-							fill='#fff'
-							d='M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z'
-						></path>
-						<circle cx='31.5' cy='16.5' r='1.5' fill='#fff'></circle>
-						<path
-							fill='#fff'
-							d='M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z'
-						></path>
-					</svg>
-				</Link>
-				<Link href='https://www.linkedin.com/in/alifpahreza/'>
-					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						x='0px'
-						y='0px'
-						width='31'
-						height='31'
-						viewBox='0 0 48 48'
-					>
-						<path
-							fill='#0288D1'
-							d='M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z'
-						></path>
-						<path
-							fill='#FFF'
-							d='M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z'
-						></path>
-					</svg>
-				</Link>
-				{/* <Image src='/whatsapp.svg' alt='whatsapp icon' width={25} height={25} /> */}
-				<Link href='https://github.com/Eunlip'>
-					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						x='0px'
-						y='0px'
-						width='31'
-						height='31'
-						viewBox='0,0,256,256'
-					>
-						<g
-							fill='#ffffff'
-							fillRule='nonzero'
-							stroke='none'
-							strokeWidth='1'
-							strokeLinecap='butt'
-							strokeLinejoin='miter'
-							strokeMiterlimit='10'
-							strokeDasharray=''
-							strokeDashoffset='0'
-							fontFamily='none'
-							fontWeight='none'
-							fontSize='none'
-							textAnchor='none'
-							style={{ mixBlendMode: 'normal' }}
-						>
-							<g transform='scale(4,4)'>
-								<path d='M32,10c-12.15,0 -22,9.85 -22,22c0,12.15 9.85,22 22,22c12.15,0 22,-9.85 22,-22c0,-12.15 -9.85,-22 -22,-22zM32,14c9.941,0 18,8.059 18,18c0,8.23871 -5.54128,15.16934 -13.0957,17.30664c-0.0928,-0.19124 -0.15645,-0.40072 -0.15039,-0.63867c0.031,-1.209 0,-4.03041 0,-5.06641c0,-1.778 -1.125,-3.03906 -1.125,-3.03906c0,0 8.82422,0.09959 8.82422,-9.31641c0,-3.633 -1.89844,-5.52539 -1.89844,-5.52539c0,0 0.9973,-3.87844 -0.3457,-5.52344c-1.505,-0.163 -4.20056,1.43755 -5.35156,2.18555c0,0 -1.82342,-0.74805 -4.85742,-0.74805c-3.034,0 -4.85742,0.74805 -4.85742,0.74805c-1.151,-0.748 -3.84656,-2.34755 -5.35156,-2.18555c-1.342,1.645 -0.3457,5.52344 -0.3457,5.52344c0,0 -1.89844,1.89044 -1.89844,5.52344c0,9.416 8.82422,9.31836 8.82422,9.31836c0,0 -1.00476,1.14381 -1.10547,2.7832c-0.58969,0.20793 -1.39349,0.45313 -2.16016,0.45313c-1.85,0 -3.25548,-1.79691 -3.77148,-2.62891c-0.508,-0.821 -1.54948,-1.50977 -2.52148,-1.50977c-0.64,0 -0.95312,0.3215 -0.95312,0.6875c0,0.366 0.89823,0.62083 1.49023,1.29883c1.248,1.43 1.22488,4.64648 5.67188,4.64648c0.5258,0 1.47056,-0.1211 2.22461,-0.22461c-0.00417,1.00955 -0.0159,1.97778 0,2.59766c0.00586,0.23869 -0.05897,0.44894 -0.15234,0.64063c-7.55349,-2.1379 -13.09375,-9.0686 -13.09375,-17.30664c0,-9.941 8.059,-18 18,-18z'></path>
-							</g>
-						</g>
-					</svg>
-				</Link>
-			</div>,
-		],
 	},
 ];
