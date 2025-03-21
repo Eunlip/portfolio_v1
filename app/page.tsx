@@ -9,7 +9,7 @@ import { TextEffect } from '@/components/ui/text-effect';
 
 export default function Home() {
 	return (
-		<main className='container space-y-24 sm:space-y-44 mx-auto px-5 md:px-10 xl:px-56 2xl:px-80 '>
+		<main className='container space-y-24 sm:space-y-24 mx-auto px-5 md:px-10 xl:px-56 2xl:px-80 '>
 			<section id='home' className='pt-24 sm:pt-32 2xl:pt-44'>
 				<div className='flex flex-col gap-5'>
 					<TextEffect
@@ -56,7 +56,7 @@ export default function Home() {
 			<section id='projects'>
 				<Projects />
 			</section>
-			<section id='contactme' className=' py-4'>
+			<section id='contactme' className='py-4'>
 				<ContactMe />
 			</section>
 			<Footer />
