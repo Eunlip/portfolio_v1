@@ -21,3 +21,24 @@ body {
   height: 100%;
   scroll-behavior: smooth;
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: rgba(3, 6, 5, 1);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 6, 5, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 255, 218, 0.6);
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 255, 218, 1);
+}
